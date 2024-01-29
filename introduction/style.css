@@ -32,5 +32,5 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .container {
   display: flex;
   border: 10px solid goldenrod;
-  height: 100vh;
+  height: 100vh; /* vh stands for viewport height. It makes the container strech the entire height of the page*/
 }
