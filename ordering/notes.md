@@ -58,4 +58,4 @@ Now, for our last example, what happens if we have `order: -1`? We get:
 
 ![flexbox4](negative_order.png)
 
-Coming from a world where `array[-1]` refers to the last element of the array, we would think it's weird to have box3 moved to the front. However, we have to remember that by default, all boxes have `order: 0`. So, by setting `order: -1` to box3, we are telling the browser to put box3 before all of the other boxes with `order: 0`, so at the front.
+Coming from a world where `array[-1]` refers to the last element of the array, we would think it's weird to have box3 moved to the front. However, we have to remember that by default, all boxes have `order: 0`. So, by setting `order: -1` to `box3`, we are telling the browser to put it before all of the other boxes with `order: 0`, so at the front.
