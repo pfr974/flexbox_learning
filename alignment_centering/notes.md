@@ -99,3 +99,41 @@ We get:
 ![flexbox4](align_items_demo_baseline.png)
 
 Very cool in my opinion!
+
+## 3] With `align-content`
+
+According to https://css-tricks.com/snippets/css/a-guide-to-flexbox/, `align-content` *"aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis."*. Let's see what it does with the following CSS:
+
+```css
+.container {
+  display: flex;
+  align-content: center;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+```
+
+![flexbox5](align_content_demo_wrong.png)
+
+Having `align-content: center;` here does not make any difference to not having it. In order to see what it does, we need to follow what the documentation says: *"This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse). A single-line flexible container (i.e. where flex-wrap is set to its default value, no-wrap) will not reflect align-content."*. So let's change our CSS to the following:
+
+```css
+.container {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  border: 10px solid goldenrod;
+}
+
+.box {
+  width: 33.333%;
+}
+```
+
+This now gives:
+
+![flexbox6](align_content_demo_better.png)
+
+What we are basically doing here is vertically centering items within a layout with multiple rows.
+
