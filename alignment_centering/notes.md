@@ -137,3 +137,35 @@ This now gives:
 
 What we are basically doing here is vertically centering items within a layout with multiple rows.
 
+## 3] With `align-self`
+
+Finally, we have `align-self` that can be used to align individual flex items, here one of the boxes in our flex container. Let's see it for ourselves with the following:
+
+```css
+.container {
+  display: flex;
+  height: 100vh;
+  border: 10px solid goldenrod;
+  align-items: flex-start;
+}
+
+.box {
+  width: 33.333%;
+}
+
+.box3 {
+  padding-bottom: 200px;
+  align-self: flex-end;
+}
+
+.box7 {
+  padding-right: 200px;
+  align-self: center;
+}
+```
+
+giving us:
+
+![flexbox7](align_self_demo.png)
+
+Nothing much to add here as it is pretty self-explanatory.
