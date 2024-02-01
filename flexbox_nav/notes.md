@@ -106,7 +106,7 @@ Please note that our focus in the CSS file is on the `.flex-nav ul` selector. Ev
 
 Our page initially looks like this:
 
-![Initial state](initial_state_flexnav.png)
+![Initial state](initial_state_flexnav.jpg)
 
 ## Working on the flex container
 
@@ -133,12 +133,55 @@ Let's start simple and have the following lines in our CSS:
 
 which gives us:
 
-![First modification, full window](first_modif_flexnav.png)
+![First modification, full window](first_modif_flexnav.jpg)
 
 Here, `ul` is the flex container and the `li`'s are the flex items. By having `flex: 3;` for them and `flex: 1;` for `.social`, we make sure that the social icons are not taking as miuch space as the other items. Please note that initially, `.flex-nav li` sets up all the items the same but `.flex-nav .social` will override it for the `.social` class items.
 
 Another interesting thing to note at this stage is that if we reduce the window size, we still get something relatively nice:
 
-![First modification, smaller window](first_modif_flexnav_small_window.png)
+![First modification, smaller window](first_modif_flexnav_small_window.jpg)
 
 **This simplicity is what I have been enjoying about flexboxes in my learning.**
+
+Yet, if we decrease the window size even more, we get something a bit ugly:
+
+![First modification, issue with very small window](first_modif_flexnav_very_small_window.jpg)
+
+## Handling smaller windows
+
+Let's start with the following in our CSS:
+  
+```css
+@media all and (max-width:1000px) {
+  .flex-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .flex-nav li {
+    flex:1 1 50%;
+  }
+
+  .flex-nav .social {
+    flex: 1 1 25%;
+  }
+
+}
+```
+What we did here is to make sure than when the window in under 1000 pixels wide, the flex items are wrapped (via `flex-wrap: wrap;`) and the regular items take 50% on the space per row while the social items take 25% of the space per row. This gives us:
+
+![Second modification, smaller window](second_modif_flexnav_small_window.jpg)
+
+Similarly, we can handle when the window is under 500 pixels wide with the following:
+
+```css
+@media all and (max-width:500px) {
+  .flex-nav li {
+    flex-basis: 100%;
+  }
+```
+
+giving us:
+
+![Second modification, smaller window](second_modif_flexnav_very_small_window.jpg)
+
+Please note that there, we only needed to add `flex-basis: 100%;`. This only overrides the `flex: 1 1 50%;` from above for the normal items while the `flex: 1 1 25%;` is still in effect for the social items.
