@@ -108,4 +108,37 @@ Our page initially looks like this:
 
 ![Initial state](initial_state_flexnav.png)
 
-## working on the flex container
+## Working on the flex container
+
+Let's start simple and have the following lines in our CSS:
+
+```css
+/* Flex Container */
+.flex-nav ul {
+  border:1px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.flex-nav li {
+  flex: 3;
+}
+
+.flex-nav .social {
+  flex: 1;
+}
+```
+
+which gives us:
+
+![First modification, full window](first_modif_flexnav.png)
+
+Here, `ul` is the flex container and the `li`'s are the flex items. By having `flex: 3;` for them and `flex: 1;` for `.social`, we make sure that the social icons are not taking as miuch space as the other items. Please note that initially, `.flex-nav li` sets up all the items the same but `.flex-nav .social` will override it for the `.social` class items.
+
+Another interesting thing to note at this stage is that if we reduce the window size, we still get something relatively nice:
+
+![First modification, smaller window](first_modif_flexnav_small_window.png)
+
+**This simplicity is what I have been enjoying about flexboxes in my learning.**
