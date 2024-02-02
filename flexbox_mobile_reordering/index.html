@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Galaxy Formation Workshop</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="wrapper">
+    
+    <header class="top">
+      <h1><a href="#">Star Formation and Turbulence of the Interstellar Medium in Simulated Galaxies.</a></h1>
+    </header>
+
+    <nav class="flex-nav">
+      <a href="#" class="toggleNav">☰ Menu</a>
+      <ul>
+        <li><a href="#">Kennicutt-Schmidt law</a></li>
+        <li><a href="#">Gravitational instability</a></li>
+        <li><a href="#">The role of Turbulence</a></li>
+        <li><a href="#">Numerical simulation</a></li>
+        <li><a href="#">Adaptive Mesh Refinement</a></li>
+        <li><a href="#">Supernova Feedback</a></li>
+        <li class="social">
+          <a href="http://twitter.com"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li class="social">
+          <a href="http://facebook.com"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li class="social">
+          <a href="http://github.com"><i class="fa fa-github"></i></a>
+        </li>
+        <li class="social">
+          <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <img src="da_vinci_sketch.jpg">
+    </section>
+
+    <section class="details">
+      <p>A comprehensive digital presentation to help you understand the role of supercomputers</p>
+      <p>in simulating galaxy formation and the interstellar medium's turbulence.</p>
+      <p>Sign up today to grab all the videos and notes!</p>
+    </section>
+
+    <section class="signup">
+      <form action="" class="signup">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email Address">
+        <input type="submit" value="Sign me up!">
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; Dr. Frédéric Robert</p>
+    </footer>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    
+    $(function() {
+      $('.toggleNav').on('click',function() {
+        $('.flex-nav ul').toggleClass('open');
+      });
+    });
+
+  </script>
+</body>
+</html>
