@@ -157,3 +157,110 @@ section, footer {
   
 }
 ```
+
+## Familiar territory with the navbar
+
+We start with the following for the flexbox related CSS:
+
+```css
+/* Flex Container */
+.flex-nav ul {
+  border:1px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Flex item */
+.flex-nav li {
+  flex: 1;
+}
+
+@media all and (max-width:1000px) {
+  .flex-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .flex-nav li {
+    flex: 1 1 50%;
+  }
+}
+
+
+@media all and (max-width:500px) {
+  .flex-nav li {
+    flex-basis: 100%;
+  }
+}
+```
+
+This is in the same spirit as what we did for the flexbox navigation bar. If we decrease the size of the window, the navigation bar will reorganise itself. So far, so good.
+
+![Webpage with a navbar](flexbox_webpage_navbar.jpg)
+
+## Reordering the content
+
+Let's start with the following :
+```css
+  /* Flex container */
+  .wrapper {
+    display:flex;
+    flex-direction:column;
+  }
+```
+We turn the wrapper into a flex container and we set the direction to column. This means that the children of the wrapper, the header, the nav, the sections and the footer, will be stacked vertically. We make sure of the latter by using `flex-direction:column`.
+
+Now, we add:
+
+```css
+  /* Flex item */
+  .wrapper > * {
+    order: 99
+  }
+
+  .flex-nav {
+    order: 1;
+  }
+```
+
+The first part of the CSS code sets the order of the flex items to 99, placing them at the end of the flex container. By default the order of the different items is 9. So, by having a high number like 99, we make sure that the items will be placed at the end of the flex container. Therefore, with the navigation bar having an order of 1, it will be put at the top of the flex container.
+
+To then close the navigation bar, we add the following:
+
+```css
+  .toggleNav {
+    display: block;
+  }
+
+  .flex-nav ul {
+    display: none;
+  }
+
+  .flex-nav ul.open {
+    display: flex;
+  }
+```
+The first two blocks of code are used to hide the navigation bar. The remaining block of code is used to display it when we click on the `toggleNav` button.
+
+Finally, we reorder the rest of the items with: 
+  
+  ```css
+  .top {
+    order: 2;
+  }
+
+  .details {
+    order: 3;
+  }
+
+  .signup {
+    order: 4;
+  }
+  ```
+
+  Nothing really special here. Our webpage now looks like this when we reduce the size of the window:
+
+  ![Webpage with a navbar](end_webpage_top.jpg)
+
+  That's it! We have successfully reordered the content of our webpage and adding a toggle button to open/close the (flexbox) navigation bar. 
