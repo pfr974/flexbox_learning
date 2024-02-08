@@ -34,10 +34,35 @@ a:hover {
   background:rgba(0,0,0,0.4);
 }
 
-
+/* flex container */
 .slider-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0; 
+  padding: 0;
+  display: flex;
+}
+
+/* flex item number 1 */
+.slider-nav li {
+  flex: 2;
+  border: 1px solid goldenrod;
+  text-align: center;
+  display: flex;
+}
+
+.slider-nav .arrow {
+  flex: 1;
+}
+
+.slider-nav a {
+  flex-basis:100%;
+  display: flex;
+  align-items: center;
+}
+
+/* flex items associated to the slider-nav a flex container */
+.slider-nav span {
+  display: block;
+  width: 100%;
 }
 
